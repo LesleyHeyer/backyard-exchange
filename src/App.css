@@ -1,0 +1,19 @@
+
+.search-form, h1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+/* 
+body {
+  background-image: './images/bbq.jpg';
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: blackwhite;
+} */
+
+.home {
+  min-height: 75vh;
+}
