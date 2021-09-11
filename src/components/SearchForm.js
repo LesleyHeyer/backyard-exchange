@@ -10,6 +10,7 @@ const SearchForm = () => {
         <input type="radio" value="vegetable" name="cookingStyle" />
         <label for="vegetable">Smoked</label>
         <select name="proteinChoice">
+        <option value="" disabled selected hidden>Protein/Vegetable</option>
           <option value="chicken">Chicken</option>
           <option value="chicken">Beef</option>
           <option value="chicken">Turkey</option>

@@ -4,6 +4,11 @@
   justify-content: center;
   align-content: center;
 }
+
+.title {
+  font-size: 55px;
+  font-family: 'Alegreya SC', serif;
+}
 /* 
 body {
   background-image: './images/bbq.jpg';

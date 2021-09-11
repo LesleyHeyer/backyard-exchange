@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div>
-      <h1> BACKYARD EXCHANGE </h1>
+      <h1 className="title"> BACKYARD EXCHANGE </h1>
       <div className="home">
       <div className="search-form">
       <SearchForm
