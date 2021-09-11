@@ -8,8 +8,8 @@ import Recipe from './components/Recipe'
 function App() {
 
   
-  const APP_ID = '';
-  const APP_KEY = '';
+  // const APP_ID = '';
+  const APP_KEY = '4df740ec417a4ba4a89f4c833dceb1bd';
 
   const [recipes, setRecipes] = useState([]);
   //because the hits come back as an array of objects
@@ -22,7 +22,7 @@ function App() {
   // }, [query]);
 
   // const getRecipes = async () => {
-  //   const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
+  //   const response = await fetch(`https://api.spoonacular.com/recipes/716429/information?apiKey={APP_KEY}Y&includeNutrition=true.`);
   //   const data = await response.json();
   //   setRecipes(data.hits); 
   //   console.log(data.hits);
