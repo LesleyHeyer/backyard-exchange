@@ -3,22 +3,39 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 3;
 }
 
-.title {
+h1 {
   font-size: 55px;
   font-family: 'Alegreya SC', serif;
 }
-/* 
-body {
-  background-image: './images/bbq.jpg';
+
+.bg-img {
+  background-image: url('./assets/bbq.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: blackwhite;
-} */
+  opacity: 0.2;
+}
+
+.body {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+}
 
 .home {
   min-height: 75vh;
+}
+
+.recipes {
+  flex-flow: row wrap;
+  flex-grow: 4;
+  width: 150x;
+  height: auto;
+  margin: auto;
 }

@@ -1,29 +1,92 @@
-import React from "react";
-import './SearchForm.module.css';
+import React, { useState } from "react";
+import style from './SearchForm.module.css';
 
-const SearchForm = () => {
+const SearchForm = ({setQuery, query}) => {
+
+  // console.log(setQuery);
+
+  const [radioChoice, setRadioChoice] = useState(null);
+  const [dropdownChoice, setdropDownChoice] = useState(null);
+
+  const getQuery= e => {
+    e.preventDefault(); //prevents page refresh
+    if (radioChoice !== '' && dropdownChoice !== '') {
+      console.log('Hello')
+      setQuery(`${radioChoice} ${dropdownChoice}`);
+      setRadioChoice(null);
+      setdropDownChoice(null);
+    }   
+  };
+
+
     return (
-        <div className="search-form">
-        <form>
-        <input type="radio" value="protein" name="cookingStyle" />
-        <label for="protein">Grilled</label>
-        <input type="radio" value="vegetable" name="cookingStyle" />
-        <label for="vegetable">Smoked</label>
-        <select name="proteinChoice">
+        <div className={style.search}>
+        <form onSubmit={getQuery}>
+        <input 
+          type="radio" 
+          value="grilled" 
+          name="cookingStyle"
+          checked={radioChoice === 'grilled'}
+          onChange={(e) => { setRadioChoice(e.target.value) }}
+        />
+        <label for="grilled">
+          Grilled
+        </label>
+        <input 
+          type="radio" 
+          value="smoked" 
+          name="cookingStyle" 
+          checked={radioChoice === 'smoked'}
+          onChange={(e) => { setRadioChoice(e.target.value) }}
+        />
+        <label for="smoked">
+          Smoked
+          </label>
+
+        <div className="drop-down">
+        <select 
+        name="proteinChoice" 
+        onChange={(e) => { setdropDownChoice(e.target.value) }}
+        value={dropdownChoice}
+        >
         <option value="" disabled selected hidden>Protein/Vegetable</option>
-          <option value="chicken">Chicken</option>
-          <option value="chicken">Beef</option>
-          <option value="chicken">Turkey</option>
-          <option value="chicken">Lamb</option>
-          <option value="chicken">Pork</option>
-          <option value="chicken">Fish/Seafood</option>
-          <option value="chicken">Vegetable</option>
+          <option 
+            value='chicken'>
+            Chicken
+          </option>
+            <option 
+            value='beef'>
+            Beef
+          </option>
+          <option 
+            value='turkey'>
+            Turkey
+          </option>
+          <option 
+            value='lamb'>
+            Lamb
+          </option>
+          <option 
+            value='pork'>
+            Pork
+          </option>
+          <option 
+            value='fish'>
+            Fish
+          </option>
+          <option 
+            value='vegetable'>
+            Vegetable
+          </option>
         </select>
+        </div>
         <button className="search-button" type="submit">
         Search 
       </button>
     </form>
     </div>
+
+
     )
 }
 

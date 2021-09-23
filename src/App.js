@@ -1,68 +1,80 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import './App.css';
-import NavBar from './components/NavBar';
 import SearchForm from './components/SearchForm';
-import Recipe from './components/Recipe'
+import Recipe from './components/Recipe';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+// import NavBar from './components/NavBar';
 
 function App() {
 
   
-  // const APP_ID = '';
-  const APP_KEY = '4df740ec417a4ba4a89f4c833dceb1bd';
+  const APP_ID = 'c8728e98';
+  const APP_KEY = '5c86e9ec900ac93823bc0a8c336fe773';
 
   const [recipes, setRecipes] = useState([]);
   //because the hits come back as an array of objects
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('');
+  // const [search, setSearch] = useState('');//search input state
+  const [query, setQuery] = useState(''); //state that only submits after we click the search button
 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // useEffect (() => {  //this is to it only does a query once or when the state changes
-  //   getRecipes();
-  // }, [query]);
+  useEffect (() => {  //this is to it only does a query once or when the state changes
+    console.log('Effect has been run')
+    getRecipes();
+  }, [query]);
 
-  // const getRecipes = async () => {
-  //   const response = await fetch(`https://api.spoonacular.com/recipes/716429/information?apiKey={APP_KEY}Y&includeNutrition=true.`);
-  //   const data = await response.json();
-  //   setRecipes(data.hits); 
-  //   console.log(data.hits);
-  // }; // API CALL - USE SPOONACULAR
+  const getRecipes = async () => {
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await response.json(); //the await is to wait for the promise
+    
+    setRecipes(data.hits); //setRecipes holds the recipes we get from the query
+    console.log(data.hits);
 
+  }
 
   // const updateSearch = e => {
-  //   setSearch(e.target.value);
+  //   setSearch(e.target.value); //the event from the onChange in the input of the search will provide the value to update setSearch
   // };
 
   // const getSearch = e => {
   //   e.preventDefault(); //prevents page refresh
-  //   setQuery(search);
+  //   setQuery(search); //this gets the query (finished text) from the search submission
+  //   setSearch(''); //sets search back to empty string
   // };
 
-  return (
-    <div>
-      <h1 className="title"> BACKYARD EXCHANGE </h1>
-      <div className="home">
-      <div className="search-form">
-      <SearchForm
-        // search={getSearch}
-        // updateSearch={updateSearch}
-      />
-      </div>
-      <div className="recipes">
-      {/* {recipes.map(recipe => (
-      <Recipe 
-        key={}
-        title={}
-        calorie={}
-        image={}
-        ingredients={}
 
-      />
-      ))} */}
+
+  return (
+    <div className="app">
+       {sidebarOpen ? 
+        <Sidebar /> : ""}
+          <Header setSidebarOpen={setSidebarOpen} />
+        <SearchForm
+          // getSearch={getSearch}
+          // search={search}
+          // updateSearch={updateSearch}
+          query={query}
+          setQuery={setQuery}
+        />
+        <div className="body">
+        <body>
+          <div className="recipes">
+        {recipes.map(recipe => (
+          <Recipe 
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+        ))}
+        </div>
+        </body>
+        </div>
+
+      {/* <NavBar /> */}
       </div>
-      </div>
-      <NavBar />
-    </div>
 
   );
 }
