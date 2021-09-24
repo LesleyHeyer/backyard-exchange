@@ -14,7 +14,7 @@ const SearchForm = ({setQuery, query}) => {
       console.log('Hello')
       setQuery(`${radioChoice} ${dropdownChoice}`);
       setRadioChoice(null);
-      setdropDownChoice(null);
+      setdropDownChoice('');
     }   
   };
 
