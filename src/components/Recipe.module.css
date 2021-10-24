@@ -7,7 +7,9 @@
     justify-content: space-around;
     background: white;
     align-items: center;
-    min-width: 40px;
+    max-width: 50vh;
+    height: auto;
+    padding: 20px;
 }
 
 .image {

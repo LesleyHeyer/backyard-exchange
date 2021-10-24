@@ -1,16 +1,24 @@
 import React from "react";
-import style from "./NavBar.module.css";
+import './NavBar.css';
+import { BrowserRouter as Router, Switch, Link } from "react-router-dom/cjs/react-router-dom.min";
+// import { Link } from 'react-router-dom';
 
 const NavBar = () => {
 
     return (
-    <div>
-     <nav className={style.nav}>
-         <p>Gallery</p>
-         <p>About</p>
+<Router>
+ <div>
+    <Switch>
+        <ul>
+        <li><Link to="/" className="link">Home</Link></li>
+        <li><Link to="/About" className="link">About</Link></li>
+        <li><Link to="/Gallery" className="link">Gallery</Link></li>
+        <li><Link to="" className="link">Contact</Link></li>
+        </ul>
+    </Switch>
+</div>
+</Router>
      
-     </nav>
-     </div>
     )
 }
 

@@ -15,13 +15,18 @@ const SearchForm = ({setQuery, query}) => {
       setQuery(`${radioChoice} ${dropdownChoice}`);
       setRadioChoice(null);
       setdropDownChoice('');
-    }   
+    } else {
+      alert('Please select all options');
+    }
   };
 
 
     return (
         <div className={style.search}>
-        <form onSubmit={getQuery}>
+        <form onSubmit={getQuery}
+        className={style.selection_panel}
+        >
+          <div className="p-2 m-1">
         <input 
           type="radio" 
           value="grilled" 
@@ -42,14 +47,15 @@ const SearchForm = ({setQuery, query}) => {
         <label for="smoked">
           Smoked
           </label>
-
-        <div className="drop-down">
+          </div>
+        <div>
         <select 
         name="proteinChoice" 
         onChange={(e) => { setdropDownChoice(e.target.value) }}
         value={dropdownChoice}
+        className={style.dropdown}
         >
-        <option value="" disabled selected hidden>Protein/Vegetable</option>
+        <option value="" disabled selected hidden>Choose An Option</option>
           <option 
             value='chicken'>
             Chicken
@@ -80,9 +86,11 @@ const SearchForm = ({setQuery, query}) => {
           </option>
         </select>
         </div>
-        <button className="search-button" type="submit">
+        <div>
+        <button className="btn btn-dark mt-2" type="submit">
         Search 
       </button>
+      </div>
     </form>
     </div>
 

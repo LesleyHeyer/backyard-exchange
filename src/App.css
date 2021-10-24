@@ -33,9 +33,11 @@ h1 {
 }
 
 .recipes {
+  display: flex;
+  justify-content: space-around;
   flex-flow: row wrap;
   flex-grow: 4;
-  width: 150x;
+  width: 100vw;
   height: auto;
   margin: auto;
 }

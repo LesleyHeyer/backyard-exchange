@@ -3,3 +3,14 @@
     justify-content: center;
 
 }
+
+.dropdown {
+    width: 15vw;
+}
+
+.selection_panel {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
