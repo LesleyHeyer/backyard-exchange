@@ -26,7 +26,7 @@ const SearchForm = ({setQuery, query}) => {
         <form onSubmit={getQuery}
         className={style.selection_panel}
         >
-          <div className="p-2 m-1">
+          <div className="p-1 m-1">
         <input 
           type="radio" 
           value="grilled" 
@@ -34,7 +34,9 @@ const SearchForm = ({setQuery, query}) => {
           checked={radioChoice === 'grilled'}
           onChange={(e) => { setRadioChoice(e.target.value) }}
         />
-        <label for="grilled">
+        <label for="grilled"
+        className="p-1"
+        >
           Grilled
         </label>
         <input 
@@ -44,11 +46,13 @@ const SearchForm = ({setQuery, query}) => {
           checked={radioChoice === 'smoked'}
           onChange={(e) => { setRadioChoice(e.target.value) }}
         />
-        <label for="smoked">
+        <label for="smoked"
+        className="p-1"
+        >
           Smoked
           </label>
           </div>
-        <div>
+        <div className="p-1 m-1">
         <select 
         name="proteinChoice" 
         onChange={(e) => { setdropDownChoice(e.target.value) }}
@@ -87,7 +91,7 @@ const SearchForm = ({setQuery, query}) => {
         </select>
         </div>
         <div>
-        <button className="btn btn-dark mt-2" type="submit">
+        <button className="btn btn-dark mt-2 mb-2" type="submit">
         Search 
       </button>
       </div>

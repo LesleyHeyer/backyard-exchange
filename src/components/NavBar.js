@@ -8,6 +8,7 @@ const NavBar = () => {
     return (
 <Router>
  <div>
+     <h1>Backyard Exchange</h1>
     <Switch>
         <ul>
         <li><Link to="/" className="link">Home</Link></li>
