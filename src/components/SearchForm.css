@@ -1,0 +1,52 @@
+.search {
+    display: flex;
+    justify-content: center;
+
+}
+label {
+  color: white;
+}
+
+.dropdown {
+    width: 15vw;
+}
+
+.selection_panel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-form, h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 3;
+  }
+  
+  h1 {
+    font-size: 55px;
+    font-family: 'Alegreya SC', serif;
+  }
+  
+  .body {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .home {
+    min-height: 75vh;
+  }
+  
+  .recipes {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    flex-grow: 4;
+    width: 100vw;
+    height: auto;
+    margin: auto;
+  }

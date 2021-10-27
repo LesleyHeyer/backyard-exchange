@@ -1,0 +1,16 @@
+.p {
+    display: flex;
+    justify-content: center;
+}
+
+.gallery_body {
+    margin: 20px;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+color: white;
+}

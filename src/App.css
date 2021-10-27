@@ -1,31 +1,7 @@
 
-.search-form, h1 {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 3;
-}
-
 h1 {
   font-size: 55px;
   font-family: 'Alegreya SC', serif;
-}
-
-.bg-img {
-  background-image: url('./assets/bbq.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  opacity: 0.2;
-}
-
-.body {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-
 }
 
 .home {
@@ -37,14 +13,4 @@ h2 {
   display: flex;
   justify-content: center;
 
-}
-
-.recipes {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  flex-grow: 4;
-  width: 100vw;
-  height: auto;
-  margin: auto;
 }

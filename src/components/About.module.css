@@ -1,0 +1,18 @@
+.p {
+    display: flex;
+    justify-content: center;
+}
+
+.about_body {
+    margin: 20px;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+
+.title {
+color: white;
+}
