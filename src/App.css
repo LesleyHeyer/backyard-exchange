@@ -32,9 +32,16 @@ h1 {
   min-height: 75vh;
 }
 
+h2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+
+}
+
 .recipes {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-flow: row wrap;
   flex-grow: 4;
   width: 100vw;

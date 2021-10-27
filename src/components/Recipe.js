@@ -7,7 +7,7 @@ const Recipe = ({ title, image, ingredients, url }) => {
         
         <div className={style.recipe}>
             <h2>{title}</h2>
-            <a href={url}>Click Here To View Full Recipe</a>
+            <a target="_blank" href={url}>Click Here To View Full Recipe</a>
             {/* <ol>
                 {ingredients.map(ingredient =>(
                     <li>{ingredient.text}</li>

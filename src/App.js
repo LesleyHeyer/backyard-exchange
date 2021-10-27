@@ -3,6 +3,9 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import SearchForm from './components/SearchForm';
 import Recipe from './components/Recipe';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/cjs/react-router-dom.min';
+import Gallery from './components/Gallery';
+import About from './components/About';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
@@ -48,14 +51,16 @@ function App() {
 
 
   return (
+    <Router>
     <div className="app">
       <header>
       <NavBar />
+      <Switch>
+        <Route path="/About" component={About} />
+        <Route path="/Gallery" component={Gallery} />
+      </Switch>
       </header>
         <SearchForm
-          // getSearch={getSearch}
-          // search={search}
-          // updateSearch={updateSearch}
           query={query}
           setQuery={setQuery}
         />
@@ -75,6 +80,7 @@ function App() {
         </body>
         </div>
         </div>
+        </Router>
   );
 }
 
