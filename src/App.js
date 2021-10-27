@@ -52,14 +52,12 @@ function App() {
   return (
     <Router>
     <div className="app">
-      <header>
       <NavBar />
       <Switch>
         <Route path='/' exact component={SearchForm} />
         <Route path="/About" component={About} />
         <Route path="/Gallery" component={Gallery} />
       </Switch>
-      </header>
         </div>
         </Router>
   );

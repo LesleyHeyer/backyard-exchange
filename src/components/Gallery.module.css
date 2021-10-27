@@ -9,8 +9,19 @@
     background-color: white;
     display: flex;
     justify-content: center;
+    height: 70vh;
+    width: 80vw;
 }
 
 .title {
-color: white;
+color: black;
+font-family: arial;
+margin: 4px;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

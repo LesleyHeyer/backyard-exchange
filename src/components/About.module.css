@@ -10,9 +10,21 @@
     display: flex;
     justify-content: center;
     position: relative;
-    height: 100%;
+    height: 70vh;
+    width: 80vw;
 }
 
 .title {
-color: white;
+color: black;
+font-family: Arial;
+margin: 4px;
+}
+
+.about {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
