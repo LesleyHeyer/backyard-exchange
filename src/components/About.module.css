@@ -1,14 +1,12 @@
-.p {
-    display: flex;
-    justify-content: center;
-}
 
 .about_body {
     margin: 20px;
-    padding: 30px;
+    padding: 50px;
     background-color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
     position: relative;
     height: 70vh;
     width: 80vw;
@@ -27,4 +25,12 @@ margin: 4px;
     justify-content: center;
     align-items: center;
     
+}
+
+.about_image {
+    border-radius: 10%;
+    width: 80vh;
+    height: auto;
+    box-shadow: 0px 5px 20px rgb(71, 71, 71);
+
 }
